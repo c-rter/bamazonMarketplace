@@ -57,9 +57,14 @@ inquirer.prompt([
 
   if (allResults[answer.itemID - 1].stock_quantity >= answer.itemQuantity) {
 
+console.log("");
 console.log("You have been approved.");
+console.log("");
 totalCost = allResults[answer.itemID - 1].price * answer.itemQuantity;
+console.log("");
 console.log("Your account has been charged: " + totalCost);
+console.log("");
+
 totalQuantity = allResults[answer.itemID - 1].stock_quantity - answer.itemQuantity;
 
 var query = connection.query(
@@ -80,6 +85,9 @@ queryItUp();
 
   }
   else {
+    console.log("");
 console.log("Not enough product in stock.");
+console.log("");
+
   }
 });
